@@ -1,0 +1,117 @@
+.reviews__list {
+	display: flex;
+	padding: 130px 120px 0 120px;
+	vertical-align: top;
+}
+
+.reviews__item {
+	position: relative;
+	display: inline-block;
+	padding-bottom: 80px;
+	width: 48%;
+
+	@include clearfix;
+
+	&:not(:last-child) {
+		margin-right: 90px;
+	}
+}
+
+// user
+.reviews__user {
+	float: left;
+	width: 35%;
+}
+
+.reviews__user-img {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50%;
+
+	img {
+		@include center;
+	}
+}
+
+.reviews__user-name {
+	font-weight: bold;
+	font-size: 1.5rem;
+	line-height: 3.5rem;
+	color: #8595ab;
+}
+
+.reviews__user-info {
+	font-size: 1.3rem;
+	line-height: 2.3rem;
+	color: $gray;
+}
+
+// review
+.reviews__content {
+	float: left;
+	width: 65%;
+	padding-left: 25px;
+}
+
+.reviews__title {
+	font-size: 2.4rem;
+	color: #000;
+}
+
+.reviews__rate {
+	display: flex;
+	align-items: center;
+	padding: 10px 0 25px 0;
+
+	span {
+		display: block;
+		width: 17px;
+		height: 17px;
+		margin-right: 3px;
+		background: url("../img/icons/star.svg") center no-repeat;
+		background-size: contain;
+	}
+
+	date {
+		padding: 0 10px;
+		font-size: 1.3rem;
+		color: $gray;
+	}
+}
+
+.reviews__text {
+	max-height: 300px;
+	padding-left: 5px;
+	color: $gray_dark;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.reviews__marker {
+	position: absolute;
+	left: calc(35% + 25px);
+	bottom: 0;
+}
+
+// reviews more...
+.reviews__more {
+	padding-top: 70px;
+	padding-bottom: 65px;
+	text-align: center;
+
+	.sub-title {
+		color: #000;
+	}
+}
+
+.reviews__more-list {
+	display: flex;
+	justify-content: center;
+	padding: 30px 0 0 0;
+
+	li:not(:last-child) {
+		margin-right: 30px;
+	}
+}

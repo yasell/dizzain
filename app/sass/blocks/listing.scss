@@ -1,0 +1,99 @@
+.listing {
+	background: center no-repeat;
+	background-size: cover;
+	color: $gray_lighter;
+
+	&--top {
+		background-image: url("../img/listing-top-bg.jpg");
+	}
+	&--bottom {
+		background-image: url("../img/listing-bottom-bg.jpg");
+	}
+}
+
+// row
+.listing__row {
+	padding: 55px 0 65px 0;
+
+	&--title {
+		padding: 65px 0 82px 0;
+
+		.listing__col-l {
+			min-height: auto;
+			padding-left: 30px;
+		}
+	}
+
+	&:nth-child(odd) {
+		background-color: rgba(0, 0, 0, .10);
+	}
+
+	.container {
+		@include clearfix;
+	}
+}
+
+// columns
+.listing__col-l {
+	position: relative;
+	float: left;
+	width: 33.333%;
+	min-height: 230px;
+	margin-right: 35px;
+	text-align: right;
+	color: #fff;
+
+	img {
+		@include center;
+	}
+}
+
+.listing__col-r {
+	float: left;
+	width: 50%;
+	padding: 0 10px;
+}
+
+.listing__col-rf {
+	position: relative;
+	float: left;
+	width: 63.75%;
+	padding: 0 10px;
+}
+
+// product
+.listing__list {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	max-width: 560px;
+	max-height: 150px;
+	padding: 25px 0 25px 20px;
+	list-style: disc;
+
+	li {
+		width: 30%;
+		margin-right: 25px;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: -28px;
+		right: -20px;
+		width: 2px;
+		height: 240px;
+		background-color: #66666e;
+	}
+}
+
+// price
+.listing__price {
+	position: absolute;
+	top: 55px;
+	right: 0;
+	width: 23%;
+	padding: 0 20px;
+	color: #fff;
+}

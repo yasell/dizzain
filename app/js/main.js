@@ -1,7 +1,4 @@
 $(document).ready(function($) {
-	// - developer funcitons
-	pageWidget(['index', 'news', 'contact']);
-	getAllClasses('html', '.elements_list');
 
 	// - mobile menu
 	$body = $("body");
@@ -15,24 +12,6 @@ $(document).ready(function($) {
 			$body.addClass("menu__open");
 			$(this).addClass("active__mod");
 		}
-	});
-
-	// - back to top
-	$(".back-top").hide();
-
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > 700) {
-			$(".back-top").fadeIn();
-		} else {
-			$(".back-top").fadeOut();
-		}
-	});
-
-	$(".back-top").click(function() {
-		$("body,html").animate({
-			scrollTop: 0
-		}, 500);
-		return false;
 	});
 
 	// - smooth scroll

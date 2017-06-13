@@ -1,0 +1,94 @@
+.contacts {
+	position: relative;
+	width: 100%;
+	min-height: 450px;
+	background: url("../img/map.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.contacts__list {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: auto;
+	width: 400px;
+	height: 300px;
+	margin: auto;
+	padding: 35px 30px;
+	background-color: #fff;
+}
+
+// contacts row`s
+.contacts__item {
+	position: relative;
+	padding-left: 50px;
+
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: center no-repeat;
+		background-size: 100%;
+	}
+
+	&--adress {
+		&:before {
+			width: 35px;
+			height: 50px;
+			background-image: url("../img/icons/map-ico1.jpg");
+		}
+
+		span {
+			font-size: 1.8rem;
+			line-height: 2.6rem;
+			color: #9499a1;
+		}
+	}
+
+	&--phone {
+		&:before {
+			left: 10px;
+			width: 26px;
+			height: 36px;
+			background-image: url("../img/icons/phone.svg");
+		}
+
+		a {
+			font: normal 2.2rem $font_2;
+
+			&:hover,
+			&:active {
+				color: $red;
+			}
+		}
+	}
+
+	&--mail {
+		&:before {
+			left: 10px;
+			width: 26px;
+			height: 18px;
+			background-image: url("../img/icons/mail.svg");
+		}
+
+		a {
+			font-size: 1.8rem;
+			color: $red;
+
+			&:hover,
+			&:active {
+				color: #000;
+			}
+		}
+	}
+}
+
+.contacts__title {
+	font: normal 2.8rem $font_2;
+	color: #000;
+}
