@@ -4,7 +4,7 @@ $(document).ready(function($) {
 	$body = $("body");
 	$menuTrigger = $("#menu__trigger");
 
-	$menuTrigger.on("click", function () {
+	$menuTrigger.on("click", function() {
 		if ($body.hasClass("menu__open")) {
 			$body.removeClass("menu__open");
 			$(this).removeClass("active__mod");
@@ -36,40 +36,23 @@ $(document).ready(function($) {
 		$(".modal-bg").css("display", "none");
 	});
 
-	// easy form validate
-	function validateForm(dir) {
-		var form = dir;
-		var name, phone;
-		var error = [];
-		// var checking;
-		form.find("#modal_form").html("");
-		name = form.find("#name").val();
-		phone = form.find("#phone").val();
-		if (name === "") {
-			error.push("Введите имя*");
-		} else
-		if (!/[А-Яа-яЁёa-zA-Z`\s]{1,100}/.test(name)) {
-			error.push("*Мы ждём от Вас корректного имени");
-		}
-		if (phone === "") {
-			error.push("Введите телефон*");
-		} else
-		if (!/[0-9()-\s+]{3,20}/.test(phone)) {
-			error.push("*Введите корректный телефон");
-		}
-		if (error.length > 0) {
-			$.each(error, function() {
-				form.find(".errortext").append(this + "<br>");
-			});
-			return false;
-		}
-		return true;
-	}
-
-	$(".order-btn").on("submit", function(e) {
-		var valid = validateForm($(this));
-		if (!valid) {
-			return false;
-		}
+	// slider`s
+	var slider1 = new Swiper(".swiper-container", {
+		pagination: ".swiper-pagination",
+    paginationClickable: true,
+    nextButton: ".swiper-button-next",
+    prevButton: ".swiper-button-prev",
+		loop: true
 	});
+
+	// var slider2 = new Swiper(".swiper-reviews", {
+	// 	pagination: ".swiper-pagination",
+  //   paginationClickable: true,
+  //   nextButton: ".review-button-next",
+  //   prevButton: ".review-button-prev",
+	// 	loop: true,
+	// 	slidesPerView: 2,
+  //   spaceBetween: 90
+	// });
+
 });

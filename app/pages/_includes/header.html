@@ -1,41 +1,37 @@
 <header class="header">
+	<div class="header__row  container">
 
-	<div class="header__main-row">
-		<h1 class="logo">
-      <a href="/" class="logo__text"> Site logo </a>
-    </h1>
-	</div>
+		<a class="header__logo" href="/">
+			<img src="img/logo.png" width="130" height="155" alt="Carroll Garden House">
+		</a>
 
-	<div class="menu">
-		<div id="menu__trigger" class="menu__trigger">
-			<span class="menu__trigger-decor"></span>
+		<nav class="header__menu-row" aria-label="Main navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul class="header__menu-list">
+				<li class="header__menu-item">
+					<a href="#about" class="header__menu-link"> About </a>
+				</li>
+				<li class="header__menu-item">
+					<a href="#rates" class="header__menu-link"> Suites and Rates </a>
+				</li>
+				<li class="header__menu-item">
+					<a href="#review" class="header__menu-link"> Reviews </a>
+				</li>
+				<li class="header__menu-item">
+					<a href="#contacts" class="header__menu-link"> Location </a>
+				</li>
+			</ul>
+
+			<div class="menu">
+				<div id="menu__trigger" class="menu__trigger">
+					<span class="menu__trigger-decor"></span>
+				</div>
+			</div>
+		</nav>
+
+		<div class="header__aside">
+			<a class="header__phone-link" href="tel:9179925052"> 917.992.5052 </a>
+			<button id="request" class="button  button--gray" type="button" name="button"> Request to book </button>
 		</div>
+
 	</div>
-
-	<nav class="header__menu-row">
-		<ul class="header__menu-list">
-			<li class="header__menu-item">
-				<a href="#/" class="header__menu-link"> Home </a>
-			</li>
-			<li class="header__menu-item">
-				<a href="#/" class="header__menu-link"> About us </a>
-			</li>
-			<li class="header__menu-item">
-				<a href="#/" class="header__menu-link"> News </a>
-			</li>
-			<li class="header__menu-item">
-				<a href="#/" class="header__menu-link"> Blog </a>
-			</li>
-		</ul>
-	</nav>
-
-	<div class="header__aside">
-		<ul class="phone">
-			<li class="phone__item">
-				<a class="phone__link" href="tel:9179925052"> 917.992.5052 </a>
-			</li>
-		</ul>
-		<button id="request" class="button" type="button" name="button"> Request to book </button>
-	</div>
-
 </header>

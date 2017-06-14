@@ -23,6 +23,15 @@
 		width: 100%;
 	}
 
+	&--gray {
+		padding: 2rem 2.7rem;
+		font-size: 2.4rem;
+		font-weight: bold;
+		color: #fff;
+		background-color: $gray_darker;
+		border: none;
+	}
+
 	&:focus,
 	&:hover,
 	&:active {
