@@ -4,6 +4,15 @@
 	min-height: 450px;
 	background: url("../img/map.jpg") center no-repeat;
   background-size: cover;
+
+	@media (max-width: $tablet_full) {
+		background-position-x: 47%;
+	}
+	@media (max-width: $tablet) {
+		min-height: 700px;
+		background-position: 60% 0;
+		background-size: 1900px;
+	}
 }
 
 .contacts__list {
@@ -16,6 +25,13 @@
 	margin: auto;
 	padding: 35px 30px;
 	background-color: #fff;
+
+	@media (max-width: $tablet) {
+		top: auto;
+		left: 0;
+		width: 100%;
+		padding: 30px 18px;
+	}
 }
 
 // contacts row`s
@@ -25,6 +41,12 @@
 
 	&:not(:last-child) {
 		margin-bottom: 20px;
+	}
+
+	&:nth-child(2) {
+		@media (max-width: $tablet) {
+			margin-bottom: 35px;
+		}
 	}
 
 	&:before {
@@ -44,8 +66,8 @@
 		}
 
 		span {
-			font-size: 1.8rem;
-			line-height: 2.6rem;
+			font-size: 18px;
+			line-height: 26px;
 			color: #9499a1;
 		}
 	}
@@ -56,14 +78,21 @@
 			width: 26px;
 			height: 36px;
 			background-image: url("../img/icons/phone.svg");
+			@media (max-width: $tablet) {
+				top: -5px;
+				width: 18px;
+			}
 		}
 
 		a {
-			font: normal 2.2rem $font_2;
+			font: normal 22px $font_2;
 
 			&:hover,
 			&:active {
 				color: $red;
+			}
+			@media (max-width: $tablet) {
+				font-size: 18px;
 			}
 		}
 	}
@@ -77,18 +106,30 @@
 		}
 
 		a {
-			font-size: 1.8rem;
+			font-size: 18px;
 			color: $red;
 
 			&:hover,
 			&:active {
 				color: #000;
 			}
+			@media (max-width: $tablet) {
+				font-size: 16px;
+			}
 		}
+	}
+
+	@media (max-width: $tablet) {
+		font-size: 16px;
+		line-height: 25px;
 	}
 }
 
 .contacts__title {
-	font: normal 2.8rem $font_2;
+	font: normal 28px $font_2;
 	color: #000;
+
+	@media (max-width: $tablet) {
+		font-size: 22px;
+	}
 }

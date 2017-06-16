@@ -1,4 +1,5 @@
 .footer {
+	position: relative;
 	padding-top: 30px;
 	padding-bottom: 60px;
 	background-color: #292b34;
@@ -7,11 +8,44 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+
+		p {
+			font-size: 13px;
+			color: #8595ab;
+
+			&:first-child {
+				@media (max-width: $tablet) {
+					bottom: -115px;
+				}
+			}
+
+			&:last-child {
+				@media (max-width: $tablet) {
+					bottom: -60px;
+				}
+			}
+
+			@media (max-width: $desktop) {
+				padding-top: 60px;
+			}
+			@media (max-width: $tablet) {
+				position: relative;
+				padding-top: 0;
+				text-align: center;
+			}
+		}
+
+		@media (max-width: $desktop) {
+			align-items: flex-start;
+		}
+		@media (max-width: $tablet) {
+			display: block;
+		}
 	}
 
-	p {
-		font-size: 1.3rem;
-		color: #8595ab;
+	@media (max-width: $tablet) {
+		padding-top: 0;
+		padding-bottom: 90px;
 	}
 }
 
@@ -20,12 +54,21 @@
 	text-align: center;
 
 	p {
+		bottom: auto!important;
+		padding-top: 0!important;
 		padding-bottom: 10px;
+	}
+	@media (max-width: $desktop) {
+		margin-left: 0;
+	}
+	@media (max-width: $tablet) {
+		margin: 0 auto;
 	}
 }
 
 .footer__social {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 
 	li {

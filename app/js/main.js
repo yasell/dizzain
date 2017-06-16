@@ -25,34 +25,43 @@ $(document).ready(function($) {
 		return false;
 	});
 
-	// - call button
-	$("#call").click(function() {
-		$("#modal_window").addClass("modal--show");
-		$(".modal-bg").css("display", "block");
-	});
+	// fixed header
+	$(window).scroll(function() {
+			var sticky = $(".header"),
+				scroll = $(window).scrollTop();
 
-	$(".modal__close, .modal-bg").click(function() {
-		$("#modal_window").removeClass("modal--show");
-		$(".modal-bg").css("display", "none");
-	});
+			if (scroll >= 40) sticky.addClass("header--fixed");
+			else sticky.removeClass("header--fixed");
+		});
 
-	// slider`s
-	var slider1 = new Swiper(".swiper-container", {
+		// slider`s
+		var slider1 = new Swiper(".swiper-hero", {
+			pagination: ".swiper-pagination",
+			nextButton: ".swiper-button-next",
+			prevButton: ".swiper-button-prev",
+			paginationClickable: true,
+			loop: true
+		});
+
+	var slider2 = new Swiper(".swiper-reviews", {
 		pagination: ".swiper-pagination",
-    paginationClickable: true,
-    nextButton: ".swiper-button-next",
-    prevButton: ".swiper-button-prev",
-		loop: true
+		nextButton: ".swiper-button-next",
+		prevButton: ".swiper-button-prev",
+		paginationClickable: true,
+		loop: true,
+		slidesPerView: 2,
+		spaceBetween: 75,
+		breakpoints: {
+			992: {
+				spaceBetween: 70
+			},
+			767: {
+				slidesPerView: 1,
+				spaceBetween: 30,
+				pagination: ".swiper-pagination",
+				paginationClickable: true
+			}
+		}
 	});
-
-	// var slider2 = new Swiper(".swiper-reviews", {
-	// 	pagination: ".swiper-pagination",
-  //   paginationClickable: true,
-  //   nextButton: ".review-button-next",
-  //   prevButton: ".review-button-prev",
-	// 	loop: true,
-	// 	slidesPerView: 2,
-  //   spaceBetween: 90
-	// });
 
 });

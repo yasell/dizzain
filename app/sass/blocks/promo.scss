@@ -1,5 +1,12 @@
 .promo {
-	padding: 110px 0 90px 0;
+	padding: 110px 0 90px;
+	@media (max-width: $desktop) {
+		padding: 70px 30px 95px;
+	}
+	@media (max-width: $tablet) {
+		padding-top: 30px;
+		padding-bottom: 40px;
+	}
 }
 
 .promo__row {
@@ -10,6 +17,26 @@
 		width: 67.5%;
 		margin: 0 auto;
 		padding: 0 10px;
+		@media (max-width: $desktop) {
+			width: 83%;
+			margin: 0 0 0 auto;
+		}
+		@media (max-width: $tablet) {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	@media (max-width: $desktop) {
+		&:not(:last-child) {
+			margin-bottom: 110px;
+		}
+		padding: 0;
+	}
+	@media (max-width: $tablet) {
+		&:not(:last-child) {
+			margin-bottom: 45px;
+		}
 	}
 }
 
@@ -21,42 +48,103 @@
 	p:not(:last-child) {
 		margin-bottom: 10px;
 	}
+
+	@media (max-width: $desktop) {
+		width: 61%;
+		font-size: 16px;
+		line-height: 25px;
+	}
+	@media (max-width: $tablet) {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
 }
 
+// title
 .promo__title {
 	float: left;
 	width: 33.333%;
 	margin-right: 35px;
+
+	@media (max-width: $tablet) {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 35px;
+	}
 }
 
 // center block
+.promo__table {
+	@media (max-width: $tablet) {
+		display: flex;
+		margin-bottom: 30px;
+		border-top: 1px solid $gray_light;
+		border-bottom: 1px solid $gray_light;
+	}
+}
+
+// table row
 .promo__table-row {
 	display: flex;
 	justify-content: space-between;
-	padding: 20px 0 35px 0;
+	padding: 20px 0 35px;
 	border-top: 1px solid $gray_light;
 
 	&:last-child {
 		padding-bottom: 45px;
+		@media (max-width: $desktop) {
+			padding-bottom: 20px;
+		}
+		@media (max-width: $tablet) {
+			padding-bottom: 30px;
+		}
+	}
+
+	@media (max-width: $desktop) {
+		padding: 15px 0 60px 0;
+	}
+	@media (max-width: $tablet) {
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 50%;
+		padding: 25px 0 30px 0;
+		border-top: none;
 	}
 }
 
+// table col
 .promo__table-col {
 	padding: 0 0 0 30px;
 	flex: 0 1 22%;
-
-	&:first-child {
-		padding: 0;
-		min-width: 200px;
-		font-size: 2.4rem;
-		line-height: 3rem;
-		color: #000;
-	}
 
 	span {
 		display: block;
 		font-size: 1.3rem;
 		line-height: 1.7rem;
 		color: $gray;
+	}
+	&:first-child {
+		padding: 0;
+		min-width: 200px;
+		font-size: 24px;
+		line-height: 30px;
+		color: #000;
+		@media (max-width: $desktop) {
+			min-width: auto;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 18px;
+		}
+	}
+
+	@media (max-width: $desktop) {
+		padding: 0;
+		flex-basis: 21%;
+	}
+	@media (max-width: $tablet) {
+		flex: none;
+		// margin-bottom: 30px;
 	}
 }

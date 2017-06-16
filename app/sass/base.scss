@@ -7,11 +7,7 @@
 
 html {
 	min-height: 100%;
-	// font-size: 8px;
-	//
-	// @media (min-width: $tablet) {
-	// 	font-size: 9px;
-	// }
+	font-size: 9px;
 	@media (min-width: $desktop) {
 		font-size: 10px;
 	}
@@ -53,6 +49,7 @@ a {
 
 .page-wrapper {
 	position: relative;
+	min-width: 300px;
 	min-height: 100%;
 	height: auto !important;
 	overflow: hidden;
@@ -64,11 +61,14 @@ a {
 
 .title {
 	margin: 0;
-	font: 300 4rem $font_1;
+	font: 300 40px $font_1;
 	color: #000;
 
 	&--white {
 		color: #fff;
+	}
+	@media (max-width: $tablet_full) {
+		font-size: 28px;
 	}
 }
 
@@ -76,4 +76,7 @@ a {
 	font: 300 3rem $font_1;
 	line-height: 3rem;
 	color: #fff;
+	@media (max-width: $tablet_full) {
+		font-size: 28px;
+	}
 }
