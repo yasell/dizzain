@@ -77,6 +77,8 @@ a {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
+  a.button:hover, a.button:active, a.button:focus {
+    color: #ff5a5f; }
   a:hover, a:active, a:focus {
     color: #bcbbc3; }
 
@@ -104,6 +106,14 @@ a {
   font: 300 3rem "Raleway", "Arial", sans-serif;
   line-height: 3rem;
   color: #fff; }
+
+.fancybox-container .container {
+  background-color: transparent; }
+
+.fancybox-close-small:after,
+.fancybox-close-small:hover:after {
+  font-size: 0;
+  background: url("../img/icons/close.svg") center no-repeat; }
 
 .header {
   z-index: 100;
@@ -755,7 +765,6 @@ a {
           user-select: none;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
-  -webkit-appearance: button;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
@@ -773,7 +782,7 @@ a {
     outline: none; }
 
 .modal-bg {
-  z-index: 50;
+  z-index: 500;
   position: fixed;
   top: 0;
   left: 0;
@@ -789,18 +798,16 @@ a {
   z-index: 1000;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
-  bottom: 0;
   display: none;
   width: 100%;
-  max-width: 60rem;
-  height: 50rem;
+  max-width: 600px;
+  height: 100%;
   max-height: 100%;
-  margin: auto;
+  margin-right: 5%;
   padding: 0;
   background: #fff;
-  border: 2px solid rgba(0, 0, 0, 0.15);
+  border: none;
   -webkit-box-shadow: 0.4rem 0.4rem 0.5rem rgba(76, 76, 76, 0.75);
           box-shadow: 0.4rem 0.4rem 0.5rem rgba(76, 76, 76, 0.75);
   outline: 0;
@@ -824,10 +831,13 @@ a {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  width: 22px;
+  height: 22px;
   padding: 0;
   font-size: 0;
   border: none;
   border-radius: 50%;
+  background: url("../img/icons/close-red.svg") center no-repeat;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s; }
@@ -844,9 +854,14 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 2rem;
-  text-align: center;
+  padding: 30px 50px;
   overflow: auto; }
+
+.modal__title {
+  margin-bottom: 35px;
+  font: 300 36px "Raleway", "Arial", sans-serif;
+  line-height: 42px;
+  color: #000; }
 
 @-webkit-keyframes bounce {
   0% {
@@ -876,42 +891,71 @@ a {
     -webkit-transform: translateY(0);
     transform: translateY(0); } }
 
-input[type="email"],
-input[type="tel"],
-input[type="text"],
+.swiper-gallery {
+  position: relative;
+  padding: 0 135px;
+  overflow: hidden; }
+  .swiper-gallery .gallery-top {
+    height: 500px;
+    margin-bottom: 50px;
+    overflow: hidden; }
+  .swiper-gallery .gallery-thumbs {
+    height: 90px; }
+    .swiper-gallery .gallery-thumbs .swiper-wrapper {
+      margin: 0 30px; }
+    .swiper-gallery .gallery-thumbs .swiper-slide {
+      max-width: 110px;
+      margin-right: 10px;
+      overflow: hidden; }
+    .swiper-gallery .gallery-thumbs .swiper-button-next,
+    .swiper-gallery .gallery-thumbs .swiper-button-prev {
+      top: auto;
+      bottom: 30px;
+      width: 20px;
+      height: 32px; }
+  .swiper-gallery .swiper-slide img {
+    max-width: 100%; }
+  .swiper-gallery .swiper-button-next {
+    margin-top: -100px;
+    right: 0; }
+  .swiper-gallery .swiper-button-prev {
+    margin-top: -100px;
+    left: 0;
+    margin-left: 0; }
+
+input,
+select,
 textarea {
   display: block;
   width: 100%;
-  height: 4rem;
-  padding: 1rem;
-  padding-left: 3rem;
+  height: 40px;
+  padding: 10px;
+  padding-left: 13px;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
-  font: normal 1.4rem "Raleway", "Arial", sans-serif;
-  color: #323749;
+  font: normal 14px "Open Sans", "Arial", sans-serif;
+  color: #999999;
   -webkit-box-shadow: 0 0 0 1px rgba(76, 76, 76, 0.75);
           box-shadow: 0 0 0 1px rgba(76, 76, 76, 0.75);
-  border: 1px solid gainsboro;
-  border-radius: 5px;
+  border: 1px solid #cacaca;
+  border-radius: 3px;
   opacity: 1;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   -webkit-appearance: none; }
 
-input[type="email"]:required:valid,
-input[type="tel"]:required:valid,
-input[type="text"]:required:valid,
-textarea:required:valid {
-  outline: none;
-  border-color: green; }
+input,
+select,
+textarea {
+  position: relative; }
 
 /* placeholder`s */
 input::-webkit-input-placeholder, input::-moz-placeholder, input:-ms-input-placeholder,
 textarea::-webkit-input-placeholder,
 textarea::-moz-placeholder,
 textarea:-ms-input-placeholder {
-  color: #cacaca;
+  color: #999999;
   opacity: 1;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -931,64 +975,65 @@ textarea:focus {
   outline: none;
   border-color: #e1dede; }
 
-textarea {
-  height: auto;
-  resize: none; }
-
 .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   max-width: 100%;
-  margin: 0 auto;
-  padding: 1rem; }
+  margin: 0 auto; }
+  .form__label-date:after, .form__label-select:after {
+    content: "";
+    z-index: 50;
+    position: absolute;
+    top: 34px;
+    right: 10px;
+    width: 17px;
+    height: 20px;
+    background: url("../img/icons/calendar.svg") center no-repeat;
+    background-size: contain; }
+  .form__label-select:after {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    background-image: url("../img/icons/arrow-next-gray.svg"); }
+
+.form__col {
+  display: inline-block;
+  width: 46%; }
+  .form__col:not(:last-child) {
+    margin-right: 7%; }
 
 .form__unit {
   position: relative;
   margin-bottom: 20px; }
   .form__unit > label {
-    position: absolute;
-    top: 8px;
-    left: 10px;
-    font-size: 14px;
-    opacity: 0.3; }
-  .form__unit > input[type="email"]:focus,
-  .form__unit > input[type="tel"]:focus,
-  .form__unit > input[type="text"]:focus {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 16px;
+    color: #4c4c4c; }
+  .form__unit > input:focus {
     outline: 0;
-    background-color: #fff; }
-    .form__unit > input[type="email"]:focus + label,
-    .form__unit > input[type="tel"]:focus + label,
-    .form__unit > input[type="text"]:focus + label {
-      opacity: 0; }
-  .form__unit > input[type="email"]:valid,
-  .form__unit > input[type="tel"]:valid,
-  .form__unit > input[type="text"]:valid {
+    background-color: #f5f5f5; }
+  .form__unit > input:valid {
     background: #fff url("../img/icons/check.svg");
-    background-size: 15px;
+    background-size: 10px;
     background-repeat: no-repeat;
-    background-position: 3px 10px; }
-    .form__unit > input[type="email"]:valid + label,
-    .form__unit > input[type="tel"]:valid + label,
-    .form__unit > input[type="text"]:valid + label {
-      opacity: 0; }
-  .form__unit > input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
-  .form__unit > input[type="tel"]:invalid:not(:focus):not(:placeholder-shown),
-  .form__unit > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) {
+    background-position: 2px 15px;
+    border-color: green; }
+  .form__unit > input:invalid:not(:focus):not(:placeholder-shown) {
     background: pink; }
-    .form__unit > input[type="email"]:invalid:not(:focus):not(:placeholder-shown) + label,
-    .form__unit > input[type="tel"]:invalid:not(:focus):not(:placeholder-shown) + label,
-    .form__unit > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label {
-      opacity: 0; }
-  .form__unit > input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .form__error,
-  .form__unit > input[type="tel"]:invalid:focus:not(:placeholder-shown) ~ .form__error,
-  .form__unit > input[type="text"]:invalid:focus:not(:placeholder-shown) ~ .form__error {
-    max-height: 20rem;
-    padding: 1rem 2rem; }
-  .form__unit > textarea:focus {
-    outline: 0;
-    background-color: #fff; }
-    .form__unit > textarea:focus + label {
-      opacity: 0; }
-  .form__unit > textarea:not(:focus):not(:placeholder-shown) + label {
-    opacity: 0; }
+  .form__unit > input:invalid:focus:not(:placeholder-shown) ~ .form__error {
+    max-height: 6rem;
+    padding: 1rem; }
+  .form__unit > textarea {
+    height: 208px;
+    resize: none; }
+    .form__unit > textarea:focus {
+      outline: 0;
+      background-color: #fff; }
 
 .form__error {
   display: block;
@@ -996,7 +1041,7 @@ textarea {
   max-height: 0;
   padding: 0;
   text-align: center;
-  font: normal 1.4rem "Raleway", "Arial", sans-serif;
+  font: normal 14px "Raleway", "Arial", sans-serif;
   color: red;
   background: transparent;
   overflow: hidden;
@@ -1135,7 +1180,9 @@ textarea {
     .footer__share {
       margin-left: 0; }
     .button {
-      font-size: 20px; } }
+      font-size: 20px; }
+    .modal {
+      margin-right: 0; } }
 
 @media (max-width: 480px) {
     .container {

@@ -1,6 +1,6 @@
 // background
 .modal-bg {
-	z-index: 50;
+	z-index: 500;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -11,22 +11,21 @@
 	transition: all .5s ease;
 }
 
+// modal window
 .modal {
 	z-index: 1000;
 	position: fixed;
 	top: 0;
-	left: 0;
 	right: 0;
-	bottom: 0;
 	display: none;
 	width: 100%;
-	max-width: 60rem;
-	height: 50rem;
+	max-width: 600px;
+	height: 100%;
 	max-height: 100%;
-	margin: auto;
+	margin-right: 5%;
 	padding: 0;
 	background: #fff;
-	border: 2px solid rgba(0,0,0,0.15);
+	border: none;
 	box-shadow: 0.4rem 0.4rem 0.5rem $color_shadow;
 	outline: 0;
 	overflow: hidden;
@@ -45,6 +44,9 @@
 	&--sucsess {
 		height: 20rem;
 	}
+	@media (max-width: $desktop) {
+		margin-right: 0;
+	}
 }
 
 .modal__close {
@@ -52,10 +54,13 @@
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
+	width: 22px;
+	height: 22px;
 	padding: 0;
 	font-size: 0;
 	border: none;
 	border-radius: 50%;
+	background: url("../img/icons/close-red.svg") center no-repeat;
 	transition: all 0.5s;
 
 	&:hover,
@@ -73,9 +78,15 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding: 2rem;
-	text-align: center;
+	padding: 30px 50px;
 	overflow: auto;
+}
+
+.modal__title {
+	margin-bottom: 35px;
+	font: 300 36px $font_1;
+	line-height: 42px;
+	color: #000;
 }
 
 // modal animation
@@ -119,5 +130,58 @@
 	100% {
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
+	}
+}
+
+// swiper gallery
+.swiper-gallery {
+	position: relative;
+	padding: 0 135px;
+	overflow: hidden;
+
+	// rows
+	.gallery-top {
+		height: 500px;
+		margin-bottom: 50px;
+		overflow: hidden;
+	}
+
+	.gallery-thumbs {
+		height: 90px;
+		// overflow: hidden;
+
+		.swiper-wrapper {
+			margin: 0 30px;
+		}
+
+		.swiper-slide {
+			max-width: 110px;
+			margin-right: 10px;
+			overflow: hidden;
+		}
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			top: auto;
+			bottom: 30px;
+			width: 20px;
+			height: 32px;
+		}
+	}
+
+	// slide
+	.swiper-slide img {
+		max-width: 100%;
+	}
+
+	// buttons
+	.swiper-button-next {
+		margin-top: -100px;
+		right: 0;
+	}
+	.swiper-button-prev {
+		margin-top: -100px;
+		left: 0;
+		margin-left: 0;
 	}
 }
