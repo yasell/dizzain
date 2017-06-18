@@ -38,11 +38,8 @@
 		visibility: visible !important;
 		animation: bounce 0.6s;
 	}
-	&--call {
-		height: 45rem;
-	}
 	&--sucsess {
-		height: 20rem;
+		height: 200px;
 	}
 	@media (max-width: $desktop) {
 		margin-right: 0;
@@ -80,6 +77,10 @@
 	height: 100%;
 	padding: 30px 50px;
 	overflow: auto;
+
+	@media (max-width: $mobile_full) {
+		padding: 30px 20px;
+	}
 }
 
 .modal__title {
@@ -87,6 +88,11 @@
 	font: 300 36px $font_1;
 	line-height: 42px;
 	color: #000;
+	@include niceText;
+
+	@media (max-width: $mobile_full) {
+		font-size: 30px;
+	}
 }
 
 // modal animation
@@ -183,5 +189,9 @@
 		margin-top: -100px;
 		left: 0;
 		margin-left: 0;
+	}
+
+	@media (max-width: $tablet) {
+		padding: 0 10px;
 	}
 }

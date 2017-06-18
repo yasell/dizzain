@@ -49,6 +49,7 @@
 
 // X
 .menu__trigger.active__mod {
+	position: fixed;
 
 	&:before {
 		margin-top: -4px;

@@ -45,13 +45,8 @@ $(document).ready(function($) {
 	});
 
 	// date by w2ui
-	$(function() {
-		var month = (new Date()).getMonth() + 1;
-		var year = (new Date()).getFullYear();
-
-		$("input[type=eu-date]").w2field("date", {
-			format: "d.m.yyyy"
-		});
+	$("input[type=eu-date]").w2field("date", {
+		format: "d.m.yyyy"
 	});
 
 	// slider`s

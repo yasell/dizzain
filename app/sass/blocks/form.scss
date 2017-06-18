@@ -69,12 +69,19 @@ textarea {
 			height: 20px;
 			background: url("../img/icons/calendar.svg") center no-repeat;
 			background-size: contain;
+			@media (max-width: $mobile_full) {
+				top: 10px;
+			}
 		}
 	}
 
 	&__label-select:after {
 		transform: rotate(90deg);
 		background-image: url("../img/icons/arrow-next-gray.svg");
+	}
+
+	@media (max-width: $mobile_full) {
+		flex-direction: column;
 	}
 }
 
@@ -85,6 +92,13 @@ textarea {
 	&:not(:last-child) {
 		margin-right: 7%;
 	}
+
+	@media (max-width: $mobile_full) {
+		width: 100%;
+		&:not(:last-child) {
+			margin-right: 0;
+		}
+	}
 }
 
 // form units
@@ -92,11 +106,19 @@ textarea {
 	position: relative;
 	margin-bottom: 20px;
 
+	@media (max-width: $mobile_full) {
+		display: flex;
+	}
+
 	> label {
 		display: block;
 		margin-bottom: 2px;
 		font-size: 16px;
 		color: $color_label;
+		@media (max-width: $mobile_full) {
+			width: 55%;
+			padding-right: 10px;
+		}
 	}
 
 	> input {
@@ -120,6 +142,7 @@ textarea {
 
 		&:invalid:focus:not(:placeholder-shown) {
 			& ~ .form__error {
+				display: block;
 				max-height: 6rem;
 				padding: 1rem;
 			}
@@ -139,7 +162,7 @@ textarea {
 
 // error text
 .form__error {
-	display: block;
+	display: none;
 	width: 100%;
 	max-height: 0;
 	padding: 0;
@@ -157,4 +180,10 @@ textarea {
 	width: 100%;
 	max-width: 100%;
 	margin: 0 auto;
+
+	@media (max-width: $mobile_full) {
+		width: 65%;
+		margin: 0 0 0 auto !important;
+		font-size: 18px;
+	}
 }
